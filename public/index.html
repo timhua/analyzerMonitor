@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app='druidLogs'>
+<head>
+  <title></title>
+
+<body>
+<table ng-controller="getData" class="table">
+  <thead>
+    <tr>
+      <td>Feed</td>
+      <td>Host</td>
+      <td>Metric</td>
+      <td>Service</td>
+      <td>Timestamp</td>
+      <td>Value</td>
+  </thead>
+  <tbody ng-model="data.body" class=".table-hover">
+    <tr ng-repeat="row in data.body">
+      <td>{{row.feed}}</td>
+      <td>{{row.host}}</td>
+      <td>{{row.metric}}</td>
+      <td>{{row.service}}</td>
+      <td>{{row.timestamp}}</td>
+      <td>{{row.value}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+<script src="/bower_components/angular/angular.js"></script>
+<script src="/bower_components/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="javascript/app.js"></script>
+</body>
+</html>
