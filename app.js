@@ -8,7 +8,7 @@ var url = require('url');
 
 
 // initialize ZeroMQ sync
-sock.bindSync('tcp://192.168.10.91:4101');
+sock.bindSync('tcp://192.168.20.220:4101');
 console.log('Publisher bound to port 4101');
 
 app.use(express.static(__dirname + '/public'));
@@ -35,6 +35,17 @@ app.post('/api/brokerStatus', function(req,res){
   console.log("query", query);
   var date = new Date();
   console.log('brokerStatus', date);
+  data = req.body;
+  jsondata = JSON.stringify(data[0]);
+  sock.send(['druidLogs', jsondata]);
+  res.sendStatus(200);
+});
+
+app.post('/api/coordinatorStatus', function(req,res){
+  var query = url.parse(req.url, true).query;
+  console.log("query", query);
+  var date = new Date();
+  console.log('coordinatorStatus', date);
   data = req.body;
   jsondata = JSON.stringify(data[0]);
   sock.send(['druidLogs', jsondata]);

@@ -6,7 +6,7 @@ var decoder = new StringDecoder('utf8');
 var zmq = require('zmq'),
     sock = zmq.socket('sub');
 
-sock.connect('tcp://192.168.10.91:4101');
+sock.connect('tcp://192.168.20.220:4101');
 sock.subscribe('druidLogs');
 console.log('Subscriber connected to port 4101');
 
