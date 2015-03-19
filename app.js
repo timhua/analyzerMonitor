@@ -5,7 +5,8 @@ var zmq = require('zmq'),
     sock = zmq.socket('pub');
 var data;
 var url = require('url');
-
+app.use(bodyParser.json({limit: '5mb'}));
+app.use(bodyParser.urlencoded({limit: '5mb'}));
 
 // initialize ZeroMQ sync
 sock.bindSync('tcp://192.168.20.220:11220');
