@@ -37,7 +37,7 @@ app.post('/api/brokerStatus', function(req,res){
   console.log('brokerStatus', date);
   data = req.body;
   jsondata = JSON.stringify(data[0]);
-  sock.send(['', jsondata]);
+  sock.send([jsondata]);
   res.sendStatus(200);
 });
 
@@ -48,7 +48,7 @@ app.post('/api/coordinatorStatus', function(req,res){
   console.log('coordinatorStatus', date);
   data = req.body;
   jsondata = JSON.stringify(data[0]);
-  sock.send(['', jsondata]);
+  sock.send([jsondata]);
   res.sendStatus(200);
 });
 
@@ -59,7 +59,7 @@ app.post('/api/rtStatus', function(req,res){
   console.log('rtStatus', date);
   data = req.body;
   jsondata = JSON.stringify(data[0]);
-  sock.send(['', jsondata]);
+  sock.send([jsondata]);
   res.sendStatus(200);
 });
 
