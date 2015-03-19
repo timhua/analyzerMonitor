@@ -8,8 +8,8 @@ var url = require('url');
 
 
 // initialize ZeroMQ sync
-sock.bindSync('tcp://192.168.20.220:4101');
-console.log('Publisher bound to port 4101');
+sock.bindSync('tcp://192.168.20.220:11220');
+console.log('Publisher bound to port 11220');
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
@@ -37,7 +37,7 @@ app.post('/api/brokerStatus', function(req,res){
   console.log('brokerStatus', date);
   data = req.body;
   jsondata = JSON.stringify(data[0]);
-  sock.send(['druidLogs', jsondata]);
+  sock.send(['', jsondata]);
   res.sendStatus(200);
 });
 
@@ -48,7 +48,7 @@ app.post('/api/coordinatorStatus', function(req,res){
   console.log('coordinatorStatus', date);
   data = req.body;
   jsondata = JSON.stringify(data[0]);
-  sock.send(['druidLogs', jsondata]);
+  sock.send(['', jsondata]);
   res.sendStatus(200);
 });
 
@@ -59,7 +59,7 @@ app.post('/api/rtStatus', function(req,res){
   console.log('rtStatus', date);
   data = req.body;
   jsondata = JSON.stringify(data[0]);
-  sock.send(['druidLogs', jsondata]);
+  sock.send(['', jsondata]);
   res.sendStatus(200);
 });
 
