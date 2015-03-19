@@ -32,35 +32,38 @@ app.get('/api/druidLogs', function(req,res){
 });
 
 app.post('/api/brokerStatus', function(req,res){
+  res.setHeader('Content-Type', 'application/json');
   var query = url.parse(req.url, true).query;
   console.log("query", query);
   var date = new Date();
   console.log('brokerStatus', date);
   data = req.body;
   jsondata = JSON.stringify(data[0]);
-  sock.send([jsondata]);
+  sock.send(jsondata);
   res.sendStatus(200);
 });
 
 app.post('/api/coordinatorStatus', function(req,res){
+  res.setHeader('Content-Type', 'application/json');
   var query = url.parse(req.url, true).query;
   console.log("query", query);
   var date = new Date();
   console.log('coordinatorStatus', date);
   data = req.body;
   jsondata = JSON.stringify(data[0]);
-  sock.send([jsondata]);
+  sock.send(jsondata);
   res.sendStatus(200);
 });
 
 app.post('/api/rtStatus', function(req,res){
+  res.setHeader('Content-Type', 'application/json');
   var query = url.parse(req.url, true).query;
   var date = new Date();
   console.log("query", query);
   console.log('rtStatus', date);
   data = req.body;
   jsondata = JSON.stringify(data[0]);
-  sock.send([jsondata]);
+  sock.send(jsondata);
   res.sendStatus(200);
 });
 
