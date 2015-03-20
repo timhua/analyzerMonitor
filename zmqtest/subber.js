@@ -6,19 +6,15 @@ var decoder = new StringDecoder('utf8');
 var zmq = require('zmq'),
     sock = zmq.socket('sub');
 
-sock.connect('tcp://192.168.20.220:4101');
-sock.subscribe('druidLogs');
-console.log('Subscriber connected to port 4101');
+// sock.connect('tcp://192.168.20.220:4101');
+sock.connect('tcp://127.0.0.1:11220');
+sock.subscribe('');
+console.log('Subscriber connected to port 11220');
 
 sock.on('message', function(topic, chunk) {
   var dataChunk = decoder.write(chunk);
-  console.log('received a message related to:', String(topic), 'containing message:', dataChunk);
+  console.log('containing message:', dataChunk);
 });
-
-sock.on('end', function(){
-  console.log('message end');
-});
-
 
 app.listen(4001);
 console.log('listening on port 4001');

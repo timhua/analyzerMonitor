@@ -10,6 +10,13 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.12.3",
+    "moment": "^2.9.0",
+    "pg": "^4.3.0",
+    "pg-hstore": "^2.3.1",
+    "process": "^0.10.1",
+    "q": "^1.2.0",
+    "sequelize": "^2.0.4",
+    "unirest": "^0.4.0",
     "zmq": "^2.10.0"
   }
 }

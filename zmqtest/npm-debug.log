@@ -25,11 +25,11 @@
 19 verbose addNameRange registry:https://registry.npmjs.org/stringdecoder not in flight; fetching
 20 verbose request uri https://registry.npmjs.org/stringdecoder
 21 verbose request no auth needed
-22 info attempt registry request try #1 at 14:21:31
-23 verbose request id 0ad48cafab6a819e
+22 info attempt registry request try #1 at 11:37:36
+23 verbose request id e1bec0bb3e301a16
 24 http request GET https://registry.npmjs.org/stringdecoder
 25 http 404 https://registry.npmjs.org/stringdecoder
-26 verbose headers { date: 'Wed, 18 Mar 2015 21:21:31 GMT',
+26 verbose headers { date: 'Fri, 20 Mar 2015 18:37:35 GMT',
 26 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
 26 verbose headers   'content-type': 'application/json',
 26 verbose headers   'cache-control': 'max-age=0',
@@ -37,14 +37,14 @@
 26 verbose headers   'accept-ranges': 'bytes',
 26 verbose headers   via: '1.1 varnish',
 26 verbose headers   age: '0',
-26 verbose headers   'x-served-by': 'cache-atl6229-ATL',
+26 verbose headers   'x-served-by': 'cache-atl6227-ATL',
 26 verbose headers   'x-cache': 'MISS',
 26 verbose headers   'x-cache-hits': '0',
-26 verbose headers   'x-timer': 'S1426713691.450313,VS0,VE81',
+26 verbose headers   'x-timer': 'S1426876655.036530,VS0,VE32',
 26 verbose headers   'keep-alive': 'timeout=10, max=50',
 26 verbose headers   connection: 'Keep-Alive' }
 27 silly get cb [ 404,
-27 silly get   { date: 'Wed, 18 Mar 2015 21:21:31 GMT',
+27 silly get   { date: 'Fri, 20 Mar 2015 18:37:35 GMT',
 27 silly get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
 27 silly get     'content-type': 'application/json',
 27 silly get     'cache-control': 'max-age=0',
@@ -52,10 +52,10 @@
 27 silly get     'accept-ranges': 'bytes',
 27 silly get     via: '1.1 varnish',
 27 silly get     age: '0',
-27 silly get     'x-served-by': 'cache-atl6229-ATL',
+27 silly get     'x-served-by': 'cache-atl6227-ATL',
 27 silly get     'x-cache': 'MISS',
 27 silly get     'x-cache-hits': '0',
-27 silly get     'x-timer': 'S1426713691.450313,VS0,VE81',
+27 silly get     'x-timer': 'S1426876655.036530,VS0,VE32',
 27 silly get     'keep-alive': 'timeout=10, max=50',
 27 silly get     connection: 'Keep-Alive' } ]
 28 verbose stack Error: 404 Not Found: stringdecoder
