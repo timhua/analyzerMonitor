@@ -15,8 +15,8 @@ app.post('/api/rtStatus', utils.rtStatus);
 //Host status monitor
 setInterval(utils.osInfo, 5000);
 
-// console.log("listening on port 4000");
-// app.listen(4000);
+console.log("listening on port 4000");
+app.listen(4000);
 
 
 // //////////////////////////////////////////////////////////////////////
