@@ -1,19 +1,28 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var utils = require('./lib/util.js');
+var process = require('process');
 var app = express();
-var data;
+var jconf = '';
+
+if(process.argv[2]){
+  jconf = process.argv[2] + '/etc/jolata.conf';
+} else {
+  jconf = '/home/jolata/etc/jolata.conf';
+}
+
+console.log("Using Jolata conf file:",jconf);
+require('./lib/middleware.js')(jconf);
 
 // required to handle larger json responses
-app.use(bodyParser.json({limit: '5mb'}));
+// app.use(bodyParser.json({limit: '5mb'}));
 
-app.post('/api/brokerStatus', utils.brokerStatus);
-app.post('/api/coordinatorStatus', utils.coordinatorStatus);
-app.post('/api/historicalStatus', utils.historicalStatus);
-app.post('/api/rtStatus', utils.rtStatus);
+// app.post('/api/brokerStatus', utils.brokerStatus);
+// app.post('/api/coordinatorStatus', utils.coordinatorStatus);
+// app.post('/api/historicalStatus', utils.historicalStatus);
+// app.post('/api/rtStatus', utils.rtStatus);
 
 //Host status monitor
-setInterval(utils.osInfo, 5000);
+// setInterval(utils.osInfo, 5000);
 
 console.log("listening on port 4000");
 app.listen(4000);
