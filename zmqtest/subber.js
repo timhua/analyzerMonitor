@@ -6,9 +6,10 @@ var decoder = new StringDecoder('utf8');
 var zmq = require('zmq'),
     sock = zmq.socket('sub');
 
-// sock.connect('tcp://192.168.20.220:4101');
-sock.connect('tcp://127.0.0.1:11220');
-sock.subscribe('');
+// sock.connect('tcp://192.168.20.220:4101');     //peavy
+sock.connect('tcp://10.178.158.212:6557');            //localhost
+// sock.connect('tcp://192.168.20.250:10250');       //sogard
+sock.subscribe('points_100ms');
 console.log('Subscriber connected to port 11220');
 
 sock.on('message', function(topic, chunk) {
