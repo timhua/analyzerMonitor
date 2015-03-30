@@ -10,8 +10,12 @@ if(process.argv[2]){
   jconf = '/home/jolata/etc/jolata.conf';
 }
 
+if(process.argv[3] == '-l'){
+  var local = true;
+};
+
 console.log("Using Jolata conf file:",jconf);
-require('./lib/middleware.js')(jconf);
+require('./lib/middleware.js')(jconf, local);
 
 // required to handle larger json responses
 // app.use(bodyParser.json({limit: '5mb'}));
