@@ -12,7 +12,7 @@ if(process.argv[2]){
 
 if(process.argv[3] == '-l'){
   var local = true;
-};
+}
 
 console.log("Using Jolata conf file:",jconf);
 require('./lib/middleware.js')(jconf, local);
@@ -28,9 +28,10 @@ require('./lib/middleware.js')(jconf, local);
 //Host status monitor
 // setInterval(utils.osInfo, 5000);
 
-console.log("listening on port 4000");
-app.listen(4000);
-
+if(!local){
+  console.log("listening on port 4000");
+  app.listen(4000);
+}
 
 // //////////////////////////////////////////////////////////////////////
 // // testing only, used to display data received from druid nodes //////
