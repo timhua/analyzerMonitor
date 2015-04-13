@@ -25,9 +25,6 @@ require('./lib/middleware.js')(jconf, local);
 // app.post('/api/historicalStatus', utils.historicalStatus);
 // app.post('/api/rtStatus', utils.rtStatus);
 
-//Host status monitor
-// setInterval(utils.osInfo, 5000);
-
 if(!local){
   console.log("listening on port 4000");
   app.listen(4000);
