@@ -18,12 +18,12 @@ console.log("Using Jolata conf file:",jconf);
 require('./lib/middleware.js')(jconf, local);
 
 // required to handle larger json responses
-// app.use(bodyParser.json({limit: '5mb'}));
+app.use(bodyParser.json({limit: '5mb'}));
 
-// app.post('/api/brokerStatus', utils.brokerStatus);
-// app.post('/api/coordinatorStatus', utils.coordinatorStatus);
-// app.post('/api/historicalStatus', utils.historicalStatus);
-// app.post('/api/rtStatus', utils.rtStatus);
+app.post('/api/brokerStatus', utils.brokerStatus);
+app.post('/api/coordinatorStatus', utils.coordinatorStatus);
+app.post('/api/historicalStatus', utils.historicalStatus);
+app.post('/api/rtStatus', utils.rtStatus);
 
 if(!local){
   console.log("listening on port 4000");
