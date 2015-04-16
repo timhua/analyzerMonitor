@@ -11,11 +11,12 @@ if(process.argv[2]){
   jconf = '/home/jolata/etc/jolata.conf';
 }
 
+// local flag
 if(process.argv[3] == '-l'){
   var local = true;
 }
 // required to handle larger json responses
-app.use(bodyParser.json({limit: '5mb'}));
+// app.use(bodyParser.json({limit: '5mb'}));
 
 app.post('/api/brokerStatus', utils.brokerStatus);
 app.post('/api/coordinatorStatus', utils.coordinatorStatus);
