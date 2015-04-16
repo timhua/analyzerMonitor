@@ -2,7 +2,7 @@
   "name": "analyzerMonitor",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "healthStatusMonitor.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
