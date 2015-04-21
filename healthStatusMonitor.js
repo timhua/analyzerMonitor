@@ -21,7 +21,7 @@ if(process.argv[3] == '-l'){
 app.post('/api/brokerStatus', utils.brokerStatus);
 app.post('/api/coordinatorStatus', utils.coordinatorStatus);
 app.post('/api/historicalStatus', utils.historicalStatus);
-app.post('/api/rtStatus', utils.rtStatus);
+app.post('/api/realtimeStatus', utils.rtStatus);
 
 console.log("Using Jolata conf file:",jconf);
 require('./lib/middleware.js')(jconf, local);
