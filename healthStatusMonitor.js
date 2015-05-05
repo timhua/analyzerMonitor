@@ -11,17 +11,13 @@ if(process.argv[2]){
   jconf = '/home/jolata/etc/jolata.conf';
 }
 
-// local flag
+// local flag, prints locally to console and exits if true
 if(process.argv[3] == '-l'){
   var local = true;
 }
 // required to handle larger json responses
 // app.use(bodyParser.json({limit: '5mb'}));
 
-app.post('/api/brokerStatus', utils.brokerStatus);
-app.post('/api/coordinatorStatus', utils.coordinatorStatus);
-app.post('/api/historicalStatus', utils.historicalStatus);
-app.post('/api/realtimeStatus', utils.rtStatus);
 
 console.log("Using Jolata conf file:",jconf);
 require('./lib/middleware.js')(jconf, local);
@@ -30,6 +26,13 @@ if(!local){
   console.log("listening on port 4000");
   app.listen(4000);
 }
+
+// druid rest responses
+app.post('/api/brokerStatus', utils.brokerStatus);
+app.post('/api/coordinatorStatus', utils.coordinatorStatus);
+app.post('/api/historicalStatus', utils.historicalStatus);
+app.post('/api/realtimeStatus', utils.rtStatus);
+
 
 // //////////////////////////////////////////////////////////////////////
 // // testing only, used to display data received from druid nodes //////
